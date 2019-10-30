@@ -54,7 +54,7 @@ class ViewController: UIViewController, SettingsViewControllerDelegate {
             }
         }
         
-        entries.append(Conversion.init(fromVal: fromVal, toVal: toVal, mode: <#T##CalculatorMode#>, fromUnits: <#T##String#>, toUnits: <#T##String#>, timestamp: <#T##Date#>))
+        
         
         if dest != nil {
             switch(currentMode) {
@@ -71,6 +71,7 @@ class ViewController: UIViewController, SettingsViewControllerDelegate {
                     let convKey =  LengthConversionKey(toUnits: tUnits, fromUnits: fUnits)
                     let toVal = fromVal * lengthConversionTable[convKey]!;
                     dest?.text = "\(toVal)"
+                    entries.append(Conversion.init(fromVal: fromVal, toVal: toVal, mode: .Length, fromUnits: fUnits.rawValue, toUnits: tUnits.rawValue, timestamp: Date()))
                 }
             case .Volume:
                 var fUnits, tUnits : VolumeUnit
@@ -85,6 +86,7 @@ class ViewController: UIViewController, SettingsViewControllerDelegate {
                     let convKey =  VolumeConversionKey(toUnits: tUnits, fromUnits: fUnits)
                     let toVal = fromVal * volumeConversionTable[convKey]!;
                     dest?.text = "\(toVal)"
+                    entries.append(Conversion.init(fromVal: fromVal, toVal: toVal, mode: .Volume, fromUnits: fUnits.rawValue, toUnits: tUnits.rawValue, timestamp: Date()))
                 }
             }
         }
