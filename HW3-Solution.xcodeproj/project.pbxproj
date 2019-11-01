@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		33FB1A5C23675CAD0031AE44 /* Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FB1A5B23675CAD0031AE44 /* Conversion.swift */; };
+		6A63198C236B999900092CEE /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A63198B236B999900092CEE /* HistoryTableViewController.swift */; };
 		9E1E65472142BF8800F4E8CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1E65462142BF8800F4E8CB /* AppDelegate.swift */; };
 		9E1E65492142BF8800F4E8CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1E65482142BF8800F4E8CB /* ViewController.swift */; };
 		9E1E654C2142BF8800F4E8CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E1E654A2142BF8800F4E8CB /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		33FB1A5B23675CAD0031AE44 /* Conversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversion.swift; sourceTree = "<group>"; };
+		6A63198B236B999900092CEE /* HistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
 		9E1E65432142BF8800F4E8CB /* HW3-Solution.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HW3-Solution.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E1E65462142BF8800F4E8CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9E1E65482142BF8800F4E8CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 			children = (
 				9E1E65482142BF8800F4E8CB /* ViewController.swift */,
 				9E1E65782147122200F4E8CB /* SettingsViewController.swift */,
+				6A63198B236B999900092CEE /* HistoryTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				9E1E65772142C53800F4E8CB /* UnitsAndModes.swift in Sources */,
 				9EE845B0215BE2AD0091EFE4 /* ConversionCalcButton.swift in Sources */,
 				33FB1A5C23675CAD0031AE44 /* Conversion.swift in Sources */,
+				6A63198C236B999900092CEE /* HistoryTableViewController.swift in Sources */,
 				9E1E65752142C38700F4E8CB /* DecimalMinusTextField.swift in Sources */,
 				9EE845AE215BE2820091EFE4 /* ConversionCalcLabel.swift in Sources */,
 				9E1E65492142BF8800F4E8CB /* ViewController.swift in Sources */,

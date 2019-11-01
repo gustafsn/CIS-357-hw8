@@ -8,8 +8,16 @@
 
 import UIKit
 
-class ViewController: UIViewController, SettingsViewControllerDelegate {
-
+class ViewController: UIViewController, SettingsViewControllerDelegate, HistoryTableViewControllerDelegate {
+    
+    func selectEntry(entry: Conversion) {
+        self.toUnits.text = entry.toUnits
+        self.toField.text = "\(entry.toVal)"
+        self.fromUnits.text = entry.fromUnits
+        self.fromField.text = "\(entry.fromVal)"
+        self.calculatorHeader.text = "\(entry.mode) Conversion Calculator"
+    }
+    
     @IBOutlet weak var fromField: UITextField!
     @IBOutlet weak var toField: UITextField!
     @IBOutlet weak var fromUnits: UILabel!
@@ -25,7 +33,7 @@ class ViewController: UIViewController, SettingsViewControllerDelegate {
         fromField.delegate = self
         self.view.backgroundColor = BACKGROUND_COLOR
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -130,12 +138,19 @@ class ViewController: UIViewController, SettingsViewControllerDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "settingsSegue" {
-            clearPressed(sender as! UIButton)
-            if let  target = segue.destination.children[0] as? SettingsViewController {
+            //clearPressed(sender as! UIButton)
+            if let  target = segue.destination as? SettingsViewController {
                 target.mode = currentMode
                 target.fUnits = fromUnits.text
                 target.tUnits = toUnits.text
                 target.delegate = self
+            }
+        }
+        if segue.identifier == "historySegue" {
+            //clearPressed(sender as! UIBarButtonItem)
+            if let  target = segue.destination as? HistoryTableViewController {
+                target.entries = entries
+                target.historyDelegate = self
             }
         }
     }
