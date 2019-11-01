@@ -25,7 +25,11 @@ class ViewController: UIViewController, SettingsViewControllerDelegate, HistoryT
     @IBOutlet weak var calculatorHeader: UILabel!
     
     var currentMode : CalculatorMode = .Length
-    var entries : [Conversion] = []
+    var entries : [Conversion] = [
+        Conversion(fromVal: 1, toVal: 1760, mode: .Length, fromUnits: LengthUnit.Miles.rawValue, toUnits:
+            LengthUnit.Yards.rawValue, timestamp: Date.distantPast),
+        Conversion(fromVal: 1, toVal: 4, mode: .Volume, fromUnits: VolumeUnit.Gallons.rawValue, toUnits:
+            VolumeUnit.Quarts.rawValue, timestamp: Date.distantFuture)]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -138,7 +142,8 @@ class ViewController: UIViewController, SettingsViewControllerDelegate, HistoryT
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "settingsSegue" {
-            //clearPressed(sender as! UIButton)
+            self.fromField.text = ""
+            self.toField.text = ""
             if let  target = segue.destination as? SettingsViewController {
                 target.mode = currentMode
                 target.fUnits = fromUnits.text
@@ -147,7 +152,8 @@ class ViewController: UIViewController, SettingsViewControllerDelegate, HistoryT
             }
         }
         if segue.identifier == "historySegue" {
-            //clearPressed(sender as! UIBarButtonItem)
+            self.fromField.text = ""
+            self.toField.text = ""
             if let  target = segue.destination as? HistoryTableViewController {
                 target.entries = entries
                 target.historyDelegate = self
